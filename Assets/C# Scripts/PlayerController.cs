@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 2;
+        speed = 1;
         count = 0;
         SetCountText();
         winTextObject.SetActive(false);
