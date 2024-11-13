@@ -300,7 +300,6 @@ GameObject:
   - component: {fileID: 527999220}
   - component: {fileID: 527999219}
   - component: {fileID: 527999223}
-  - component: {fileID: 527999224}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -435,25 +434,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 527999217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476192fc9218a4709a207e319a38b801, type: 3}
+  m_Script: {fileID: 11500000, guid: 517adf9fe67394d818d60878f5808e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 1872620429}
-  offset: {x: 0, y: 5, z: -10}
+  target: {fileID: 1872620429}
+  offset: {x: 0, y: 5, z: 10}
+  rotateSpeed: 5
   smoothSpeed: 0.125
---- !u!114 &527999224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 527999217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a577665bc2e574af9ba88a9c866e5c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1872620423}
 --- !u!43 &578222935
 Mesh:
   m_ObjectHideFlags: 0
@@ -632,6 +619,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 578222935}
+    - target: {fileID: 229769849910911797, guid: 61111a5e3074b420bbad983fc2aa4371,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 863
+      objectReference: {fileID: 0}
     - target: {fileID: 416618494007358972, guid: 61111a5e3074b420bbad983fc2aa4371,
         type: 3}
       propertyPath: m_Mesh
@@ -677,6 +669,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 180636457}
+    - target: {fileID: 2577404013010773055, guid: 61111a5e3074b420bbad983fc2aa4371,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 4176
+      objectReference: {fileID: 0}
     - target: {fileID: 2633707133994695762, guid: 61111a5e3074b420bbad983fc2aa4371,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -722,6 +719,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1643483506}
+    - target: {fileID: 7134029951766822895, guid: 61111a5e3074b420bbad983fc2aa4371,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 5682
+      objectReference: {fileID: 0}
     - target: {fileID: 7969956179112623376, guid: 61111a5e3074b420bbad983fc2aa4371,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -966,7 +968,6 @@ GameObject:
   - component: {fileID: 1872620426}
   - component: {fileID: 1872620425}
   - component: {fileID: 1872620430}
-  - component: {fileID: 1872620431}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1042,7 +1043,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9465a6df68914623abdb91c8b7ceaac, type: 2}
+  - {fileID: 2100000, guid: b5e080290133b403e844ddbbf6265a31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1096,25 +1097,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872620423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfa9cd66342e4767aaa81dce9db9ee7, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c23ba17f75b492695af82ae94caae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countText: {fileID: 0}
-  winTextObject: {fileID: 0}
---- !u!114 &1872620431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1872620423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfa9cd66342e4767aaa81dce9db9ee7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countText: {fileID: 0}
-  winTextObject: {fileID: 0}
+  moveSpeed: 20
+  rotationSpeed: 10000
 --- !u!1 &1896767047
 GameObject:
   m_ObjectHideFlags: 0
