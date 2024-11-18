@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BallController : MonoBehaviour
 {
+    public TextMeshProUGUI countText;
+    public GameObject winTextObject;
+    
     public float moveSpeed = 5f;
     public float sprintMultiplier = 2f;
     public float rotationSpeed = 100f;
@@ -15,6 +19,7 @@ public class BallController : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 currentVelocity;
     private float sprintTimer = 0f;
+    private int count;
 
     void Start()
     {
@@ -23,6 +28,9 @@ public class BallController : MonoBehaviour
 
         // Get the main camera
         mainCamera = Camera.main;
+        count = 0;
+        SetCountText();
+        winTextObject.SetActive(false);
     }
 
     void Update()
@@ -84,6 +92,25 @@ public class BallController : MonoBehaviour
         else
         {
             sprintTimer = Mathf.Max(0f, sprintTimer - Time.deltaTime);  // Reduce timer when Shift is not held
+        }
+    }
+
+    private void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString() + "/13";
+        if(count >= 13)
+        {
+            winTextObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
         }
     }
 }
