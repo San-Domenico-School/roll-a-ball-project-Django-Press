@@ -113,4 +113,9 @@ public class BallController : MonoBehaviour
             SetCountText();
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
 }
